@@ -66,7 +66,7 @@ const sessionOptions = {
 };
 
 app.get("/", (req, res) => {
-  res.render("homepage.html");
+  res.send("homepage.html");
 });
 
 app.use(session(sessionOptions));
