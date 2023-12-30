@@ -80,10 +80,19 @@ module.exports.updateListing = async (req, res) => {
   res.redirect(`/listings/${id}`);
 };
 
-module.exports.destroyListing = async (req, res) => {
-  let { id } = req.params;
-  let deletedLisiting = await Listing.findByIdAndDelete(id);
-  console.log(deletedLisiting);
-  req.flash("success", "Listing Deleted");
-  res.redirect("/listings");
-};
+// module.exports.destroyListing = async (req, res) => {
+//   let { id } = req.params;
+//   let deletedLisiting = await Listing.findByIdAndDelete(id);
+//   console.log(deletedLisiting);
+//   req.flash("success", "Listing Deleted");
+//   res.redirect("/listings");
+// };
+
+// Destroy route (deletes listing) 
+module.exports.destroyListing = async (req,res)=>{ 
+  let {id}= req.params; 
+  let deletedListing = await Listing.findByIdAndDelete(id); 
+  console.log(deletedListing); 
+  req.flash("success","Listing Deleted !!") 
+  res.redirect("/listings") 
+}
