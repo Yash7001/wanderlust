@@ -38,13 +38,9 @@ const listingSchema = new Schema({
       required: true,
     },
   },
-  // category:{
-  //   type : String ,
-  //   enum: ['Mountains','Pools',"Arctic","Iconic cities"]
-  // }
 });
 
-listingSchema.post("findOneAndDelete", async (Listing) => {
+listingSchema.post("findOneAndDelete", async (listing) => {
   if (listing) {
     await Review.deleteMany({ _id: { $in: listing.reviews } });
   }
