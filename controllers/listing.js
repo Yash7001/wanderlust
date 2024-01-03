@@ -89,15 +89,3 @@ module.exports.destroyListing = async (req, res) => {
   res.redirect("/listings");
 };
 
-// module.exports.destroyListing = async (req, res) => {
-//   try {
-//     let { id } = req.params;
-//     let deletedListing = await Listing.findByIdAndDelete(id);
-//     console.log(deletedListing);
-//     req.flash("success", "Listing Deleted !!");
-//     res.redirect("/listings");
-//   } catch (error) {
-//     console.error(error);
-//     // Handle errors appropriately
-//   }
-// };
